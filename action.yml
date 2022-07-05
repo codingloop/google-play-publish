@@ -20,6 +20,12 @@ runs:
     - name: setup python
       uses: actions/setup-python@v3
 
+    - name: debug
+      shell: bash
+      run: |
+        ls -a
+        pwd
+
     - name: install python packages
       shell: bash
       run: |
