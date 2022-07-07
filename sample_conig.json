@@ -1,0 +1,14 @@
+{
+  "repo": "codingloop/google-play-publish",
+  "package_name": "in.test.package_name",
+  "track": "production",
+  "version_code": 3,
+  "release_name": "My API release",
+  "release_status": "draft",
+  "release_notes": [
+    {
+      "language": "EN",
+      "text": "release notes here"
+    }
+  ]
+}

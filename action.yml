@@ -10,7 +10,7 @@ inputs:
 outputs:
   message:
     value: 'Successful'
-    description: 'Samle description'
+    description: 'Some description'
 runs:
   using: "docker"
   image: "Dockerfile"
