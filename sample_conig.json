@@ -1,6 +1,8 @@
 {
   "repo": "codingloop/google-play-publish",
   "package_name": "in.test.package_name",
+  "app_file_type": "aab",
+  "app_file_path": "/path/to/file",
   "track": "production",
   "version_code": 3,
   "release_name": "My API release",
@@ -10,5 +12,5 @@
       "language": "EN",
       "text": "release notes here"
     }
-  ]
+  ],
 }
