@@ -27,4 +27,16 @@ class PlayStorePublisher:
                                                         media_mime_type="application/octet-stream")
         request.execute()
 
+    def update_release(self):
+        res = self.service.edits().tracks().update(
+            editId="07894094634836777664",
+            track=self.config['track'],
+            packageName=self.package_name,
+            body={u'releases': [{
+                u'name': u'My first API release',
+                u'versionCodes': [self.config['version_code']],
+                u'status': u'draft',
+                u'releaseNotes': self.config['release_notes']
+            }]}).execute()
 
+        print(res)
