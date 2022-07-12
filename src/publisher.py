@@ -9,8 +9,12 @@ class PlayStorePublisher:
         self.edit_id = None
 
     @staticmethod
-    def execute():
-        pass
+    def execute(config: dict, service: Any):
+        publisher = PlayStorePublisher(config, service)
+        publisher.create_edit()
+        publisher.upload_aab()
+        publisher.update_release()
+        publisher.commit_edit()
 
     @property
     def package_name(self):
@@ -29,14 +33,18 @@ class PlayStorePublisher:
 
     def update_release(self):
         res = self.service.edits().tracks().update(
-            editId="07894094634836777664",
+            editId=self.edit_id,
             track=self.config['track'],
             packageName=self.package_name,
             body={u'releases': [{
-                u'name': u'My first API release',
+                u'name': self.config['release_name'],
                 u'versionCodes': [self.config['version_code']],
-                u'status': u'draft',
+                u'status': self.config['release_status'],
                 u'releaseNotes': self.config['release_notes']
             }]}).execute()
 
         print(res)
+
+    def commit_edit(self):
+        self.service.edits().commit(editId="07894094634836777664", packageName=self.package_name).execute()
+
