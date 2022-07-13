@@ -46,5 +46,5 @@ class PlayStorePublisher:
         print(res)
 
     def commit_edit(self):
-        self.service.edits().commit(editId="07894094634836777664", packageName=self.package_name).execute()
+        self.service.edits().commit(editId=self.edit_id, packageName=self.package_name).execute()
 
