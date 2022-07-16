@@ -9,7 +9,6 @@ from utils import stop_exec, get_google_credentials
 
 def main(config_file, playstore_encrypted_file, playstore_decryption_pwd):
     try:
-        print("Fuckers print this")
         config = read_config(config_file)
         creds = get_google_credentials(playstore_encrypted_file, playstore_decryption_pwd)
         service = googleapiclient.discovery.build('androidpublisher', 'v3', credentials=creds)
@@ -21,7 +20,4 @@ def main(config_file, playstore_encrypted_file, playstore_decryption_pwd):
 
 
 if __name__ == '__main__':
-    print("\nBelow are the args")
-    print(sys.argv)
-    print(len(sys.argv))
     main(*sys.argv)

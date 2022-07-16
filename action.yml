@@ -12,7 +12,6 @@ inputs:
     description: 'Key to decrypt playstore_encrypted_file'
 outputs:
   message:
-    value: 'Successful'
     description: 'Some description'
 runs:
   using: "docker"
