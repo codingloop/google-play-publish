@@ -25,12 +25,11 @@ runs:
     - run: ls -a
       shell: bash
 
-    - shell: bash
+    - name: Checkout to actions and install dependencies
+      shell: bash
       run: |
-        echo $ENV
         cd $GITHUB_ACTION_PATH
         ls -a
-
-    - run: cd src && python main.py
-      shell: bash
+        pip install -r requirements.txt
+        cd src && python main.py
 
