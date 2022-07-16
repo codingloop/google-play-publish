@@ -10,10 +10,19 @@ class PlayStorePublisher:
 
     @staticmethod
     def execute(config: dict, service: Any):
+        print("Initialized the process")
         publisher = PlayStorePublisher(config, service)
+
+        print("creating the edit")
         publisher.create_edit()
+
+        print("Uploading the ile to edit")
         publisher.upload_aab()
+
+        print("Updating the release")
         publisher.update_release()
+
+        print("Committing the edit")
         publisher.commit_edit()
 
     @property
