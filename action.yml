@@ -23,5 +23,5 @@ runs:
         cache: 'pip'
 
     - run: ls -a
-      uses: shell
+      shell: bash
 
