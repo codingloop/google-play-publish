@@ -12,8 +12,16 @@ inputs:
     description: 'Key to decrypt playstore_encrypted_file'
 outputs:
   message:
+    value: "Successful"
     description: 'Some description'
 runs:
-  using: "docker"
-  image: "Dockerfile"
+  using: "composite"
+  steps:
+    - name: Setup python
+      uses: actions/setup-python@v4
+      with:
+        cache: 'pip'
+
+    - run: ls -a
+      uses: shell
 
