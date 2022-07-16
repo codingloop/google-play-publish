@@ -4,9 +4,12 @@ inputs:
   config_file: # Path of config file containing publish configs
     description: 'Path of the file'
     required: true
-  playstore_secret: # Service account details
+  playstore_encrypted_file: # Service account details encrypted using gpg
     description: 'Service account creds'
     required: true
+  playstore_decryption_pwd: # GPG decryption password
+    required: true
+    description: 'Key to decrypt playstore_encrypted_file'
 outputs:
   message:
     value: 'Successful'
