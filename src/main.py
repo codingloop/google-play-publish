@@ -16,11 +16,10 @@ def main(config_file, playstore_encrypted_file, playstore_decryption_pwd):
 
     except Exception as e:
         print(e.args)
-        print_to_github_action(e.args)
-        print_to_github_action(str(e))
         stop_exec()
 
 
 if __name__ == '__main__':
-    print("Print this bitch")
-    main(*sys.argv)
+    import os
+    print(os.environ)
+    # main(*sys.argv)

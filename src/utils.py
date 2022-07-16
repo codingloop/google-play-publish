@@ -4,10 +4,6 @@ import sys
 from google.oauth2 import service_account
 
 
-def print_to_github_action(msg: str):
-    print(f"::set-output name=message::{msg}")
-
-
 def stop_exec(message: str = None):
     if message:
         print(message)
