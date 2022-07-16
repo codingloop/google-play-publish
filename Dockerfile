@@ -3,7 +3,7 @@ ADD . /app
 WORKDIR /app
 
 RUN pip install --target=/app/src -r requirements.txt
-RUN apt-get install gnupg
+RUN apt-get update && apt-get install -y gnupg
 
 FROM gcr.io/distroless/python3-debian10
 COPY --from=builder /app /app
