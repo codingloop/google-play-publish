@@ -25,3 +25,6 @@ runs:
     - run: ls -a
       shell: bash
 
+    - run: cd src && python main.py
+      shell: bash
+
