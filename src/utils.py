@@ -12,6 +12,10 @@ def stop_exec(message: str = None):
     sys.exit(5)
 
 
+def get_absolute_path(relative_path: str) -> str:
+    return f"{os.environ['GITHUB_WORKSPACE']}/{relative_path}"
+
+
 def get_google_credentials(encrypted_file: str, decryption_pwd: str):
     SCOPES = ['https://www.googleapis.com/auth/androidpublisher']
     os.makedirs("tmp", exist_ok=True)

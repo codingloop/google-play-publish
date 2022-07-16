@@ -1,5 +1,7 @@
 from typing import Any
 
+from utils import get_absolute_path
+
 
 class PlayStorePublisher:
 
@@ -16,7 +18,7 @@ class PlayStorePublisher:
         print("creating the edit")
         publisher.create_edit()
 
-        print("Uploading the ile to edit")
+        print("Uploading the file to edit")
         publisher.upload_aab()
 
         print("Updating the release")
@@ -35,8 +37,9 @@ class PlayStorePublisher:
         self.edit_id = res['id']
 
     def upload_aab(self):
+        app_location = get_absolute_path(self.config['app_file_path'])
         request = self.service.edits().bundles().upload(packageName=self.package_name, editId=self.edit_id,
-                                                        media_body=self.config['app_file_path'], uploadType="media",
+                                                        media_body=app_location, uploadType="media",
                                                         media_mime_type="application/octet-stream")
         request.execute()
 
