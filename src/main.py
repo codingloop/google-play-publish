@@ -20,5 +20,7 @@ def main(config_file, playstore_encrypted_file, playstore_decryption_pwd):
 
 
 if __name__ == '__main__':
+    print("\nBelow are the args")
     print(sys.argv)
+    print(len(sys.argv))
     # main(*sys.argv)
