@@ -19,7 +19,6 @@ def get_google_credentials(encrypted_file: str, decryption_pwd: str):
         f.write(encrypted_file)
     os.system(f"gpg -d --passphrase {decryption_pwd} --batch tmp/secret_file.asc > tmp/client_secrets.json")
     credentials = service_account.Credentials.from_service_account_file("tmp/client_secrets.json", scopes=SCOPES)
-    os.removedirs("tmp")
     shutil.rmtree("tmp")
     return credentials
 
