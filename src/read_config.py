@@ -3,7 +3,7 @@ from json import JSONDecodeError
 from typing import Any
 
 
-def read_config(file_path: str) -> Any[dict, list]:
+def read_config(file_path: str) -> Any:
     try:
         with open(file_path) as f:
             data = json.load(f)
