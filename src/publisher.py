@@ -3,7 +3,7 @@ from typing import Any
 
 class PlayStorePublisher:
 
-    def __int__(self, config: dict, service: Any):
+    def __init__(self, config: dict, service: Any):
         self.config = config
         self.service = service
         self.edit_id = None
