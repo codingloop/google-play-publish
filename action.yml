@@ -25,6 +25,11 @@ runs:
     - run: ls -a
       shell: bash
 
+    - shell: bash
+      run: |
+        echo $ENV
+        echo $GITHUB_ACTION_PATH
+
     - run: cd src && python main.py
       shell: bash
 
