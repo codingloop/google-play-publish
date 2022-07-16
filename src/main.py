@@ -14,6 +14,7 @@ def main(config_file, playstore_encrypted_file, playstore_decryption_pwd):
 
     except Exception as e:
         print(e.args)
+        print(e.__traceback__)
         stop_exec()
 
 
@@ -22,4 +23,5 @@ if __name__ == '__main__':
     p1 = os.environ['config_file']
     p2 = os.environ['playstore_encrypted_file']
     p3 = os.environ['playstore_decryption_pwd']
+    # GITHUB_WORKSPACE
     main(p1, p2, p3)
