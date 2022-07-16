@@ -1,5 +1,3 @@
-import sys
-
 import googleapiclient.discovery
 
 from publisher import PlayStorePublisher
@@ -21,5 +19,7 @@ def main(config_file, playstore_encrypted_file, playstore_decryption_pwd):
 
 if __name__ == '__main__':
     import os
-    print(os.environ)
-    # main(*sys.argv)
+    p1 = os.environ['INPUT_CONFIG_FILE']
+    p2 = os.environ['INPUT_PLAYSTORE_ENCRYPTED_FILE']
+    p3 = os.environ['INPUT_PLAYSTORE_DECRYPTION_PWD']
+    main(p1, p2, p3)
