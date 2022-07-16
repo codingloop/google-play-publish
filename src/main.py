@@ -21,7 +21,8 @@ if __name__ == '__main__':
     import sys
     print(sys.argv)
     # main(*sys.argv)
-    # import os
+    import os
+    print(os.environ)
     # p1 = os.environ['INPUT_CONFIG_FILE']
     # p2 = os.environ['INPUT_PLAYSTORE_ENCRYPTED_FILE']
     # p3 = os.environ['INPUT_PLAYSTORE_DECRYPTION_PWD']
