@@ -4,7 +4,7 @@ import googleapiclient.discovery
 
 from publisher import PlayStorePublisher
 from read_config import read_config
-from utils import stop_exec, get_google_credentials, print_to_github_action
+from utils import stop_exec, get_google_credentials
 
 
 def main(config_file, playstore_encrypted_file, playstore_decryption_pwd):
