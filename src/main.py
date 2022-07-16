@@ -23,4 +23,4 @@ if __name__ == '__main__':
     print("\nBelow are the args")
     print(sys.argv)
     print(len(sys.argv))
-    # main(*sys.argv)
+    main(*sys.argv)
