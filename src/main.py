@@ -6,10 +6,10 @@ from src.utils import stop_exec, get_google_credentials
 import googleapiclient.discovery
 
 
-def main(config_file, playstore_secret):
+def main(config_file, playstore_encrypted_file, playstore_decryption_pwd):
     try:
         config = read_config(config_file)
-        creds = get_google_credentials(config["secret_file"], playstore_secret)
+        creds = get_google_credentials(playstore_encrypted_file, playstore_decryption_pwd)
         service = googleapiclient.discovery.build('androidpublisher', 'v3', credentials=creds)
         PlayStorePublisher.execute(config, service)
 
