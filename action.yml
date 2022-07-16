@@ -31,5 +31,5 @@ runs:
         cd $GITHUB_ACTION_PATH
         ls -a
         pip install -r requirements.txt
-        cd src && python main.py
+        cd src && python main.py ${{inputs.config_file}} ${{inputs.playstore_encrypted_file}} ${{inputs.playstore_decryption_pwd}}
 
