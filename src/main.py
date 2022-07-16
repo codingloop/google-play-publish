@@ -22,4 +22,5 @@ def main(config_file, playstore_encrypted_file, playstore_decryption_pwd):
 
 
 if __name__ == '__main__':
+    print("Print this bitch")
     main(*sys.argv)

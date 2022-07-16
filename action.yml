@@ -16,5 +16,8 @@ outputs:
 runs:
   using: "docker"
   image: "Dockerfile"
-
+#  args:
+#    - ${{ inputs.config_file }}
+#    - ${{ inputs.playstore_encrypted_file }}
+#    - ${{ inputs.playstore_decryption_pwd }}
 
