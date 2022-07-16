@@ -21,12 +21,10 @@ def main(config_file, playstore_encrypted_file, playstore_decryption_pwd):
 
     except Exception as e:
         print(e.args)
-        print(e.__traceback__)
         stop_exec()
 
 
 if __name__ == '__main__':
-    main("dsf", "sdf", "dsf")
     import os
     p1 = os.environ['config_file']
     p2 = os.environ['playstore_encrypted_file']
