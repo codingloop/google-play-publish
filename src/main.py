@@ -18,12 +18,8 @@ def main(config_file, playstore_encrypted_file, playstore_decryption_pwd):
 
 
 if __name__ == '__main__':
-    import sys
-    print(sys.argv)
-    # main(*sys.argv)
     import os
-    print(os.environ)
-    # p1 = os.environ['INPUT_CONFIG_FILE']
-    # p2 = os.environ['INPUT_PLAYSTORE_ENCRYPTED_FILE']
-    # p3 = os.environ['INPUT_PLAYSTORE_DECRYPTION_PWD']
-    # main(p1, p2, p3)
+    p1 = os.environ['config_file']
+    p2 = os.environ['playstore_encrypted_file']
+    p3 = os.environ['playstore_decryption_pwd']
+    main(p1, p2, p3)
