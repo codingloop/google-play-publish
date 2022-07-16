@@ -4,7 +4,7 @@ import googleapiclient.discovery
 
 from publisher import PlayStorePublisher
 from read_config import read_config
-from utils import stop_exec, get_google_credentials
+from utils import stop_exec, get_google_credentials, print_to_github_action
 
 
 def main(config_file, playstore_encrypted_file, playstore_decryption_pwd):
@@ -16,6 +16,8 @@ def main(config_file, playstore_encrypted_file, playstore_decryption_pwd):
 
     except Exception as e:
         print(e.args)
+        print_to_github_action(e.args)
+        print_to_github_action(str(e))
         stop_exec()
 
 
