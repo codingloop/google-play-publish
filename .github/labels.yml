@@ -1,0 +1,7 @@
+- name: regression
+  color: d93f0b
+  description: Automated regression test failure
+
+- name: bug
+  color: ee0701
+  description: Something isn't working

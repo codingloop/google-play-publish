@@ -1,0 +1,14 @@
+{
+  "package_name": "com.example.myapp",
+  "app_file_path": "app/build/outputs/bundle/release/app-release.aab",
+  "track": "internal",
+  "version_code": 1,
+  "release_name": "1.0.0",
+  "release_status": "draft",
+  "release_notes": [
+    {
+      "language": "en-US",
+      "text": "Initial release with core features."
+    }
+  ]
+}

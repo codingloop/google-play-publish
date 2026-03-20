@@ -1,39 +1,47 @@
-name: 'Publish to google play console'
-description: 'Publish new app version to google play console'
+name: 'Publish to Google Play Console'
+description: 'Publish a new Android app version to Google Play Console'
+
+branding:
+  icon: upload-cloud
+  color: green
+
 inputs:
-  config_file: # Path of config file containing publish configs
-    description: 'Path of the file'
+  config_file:
+    description: 'Path to the JSON publish configuration file (relative to GITHUB_WORKSPACE)'
     required: true
-  playstore_encrypted_file: # Service account details encrypted using gpg
-    description: 'Service account creds'
+  playstore_encrypted_file:
+    description: 'GPG-encrypted Google Play service account credentials (as a string)'
     required: true
-  playstore_decryption_pwd: # GPG decryption password
+  playstore_decryption_pwd:
+    description: 'Passphrase used to decrypt playstore_encrypted_file'
     required: true
-    description: 'Key to decrypt playstore_encrypted_file'
+
 outputs:
   message:
     value: "Successful"
-    description: 'Some description'
+    description: 'Status message on successful publish'
+
 runs:
   using: "composite"
   steps:
-    - name: Setup python
+    - name: Setup Python
       uses: actions/setup-python@v4
       with:
+        python-version: '3.11'
         cache: 'pip'
 
-    - run: ls -a
-      shell: bash
-
-    - name: Checkout to actions and install dependencies
+    - name: Install dependencies
       shell: bash
       run: |
         cd $GITHUB_ACTION_PATH
-        ls -a
         pip install -r requirements.txt
-        cd src && python main.py
-      env:
-        config_file: ${{inputs.config_file}}
-        playstore_encrypted_file:  ${{inputs.playstore_encrypted_file}}
-        playstore_decryption_pwd: ${{inputs.playstore_decryption_pwd}}
 
+    - name: Publish to Google Play
+      shell: bash
+      run: |
+        cd $GITHUB_ACTION_PATH/src
+        python main.py
+      env:
+        config_file: ${{ inputs.config_file }}
+        playstore_encrypted_file: ${{ inputs.playstore_encrypted_file }}
+        playstore_decryption_pwd: ${{ inputs.playstore_decryption_pwd }}
