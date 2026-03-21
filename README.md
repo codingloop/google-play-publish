@@ -151,4 +151,4 @@ Workflow triggered
 
 ## License
 
-MIT © [Ishwar Bhat](https://github.com/codingloop)
+MIT
